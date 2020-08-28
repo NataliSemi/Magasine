@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'es#5sv4@flq-*6+kk&_)2q&pncww2a=6(arwpei+n#bii2ejy%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -84,7 +84,11 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'd4pq8gfikbdk08',
+        'USER': 'yotbmxjzeqqdnd',
+        'PASSWORD': 'f8b869ddeee2b814dd6a929608de9e6bd5425c68443422d4a58f45ecf2206f7a',
+        'HOST': 'ec2-34-237-89-96.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -132,9 +136,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
+# gmail_send/settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "jimmyneutron929999@gmail.com"
+EMAIL_HOST_PASSWORD = "rty-Trr8-dd5"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "jimmyneutron929999@gmail.com"
 
-
+CELERY_BROKER_URL = "redis://h:pd0919fe44d6827ddc09b063c1cb2aba0e002bad1a70b9a63cf64692a832de601@ec2-54-162-29-213.compute-1.amazonaws.com:6439"
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
